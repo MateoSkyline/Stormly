@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Search } from 'src/app/models/search.model';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-cities-cache',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CitiesCacheComponent implements OnInit {
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
+
+  cities: Search[] = [];
 
   ngOnInit(): void {
+    this.getCities();
+  }
+
+  getCities() : void {
+    this.cities = this.storageService.get();
   }
 
 }

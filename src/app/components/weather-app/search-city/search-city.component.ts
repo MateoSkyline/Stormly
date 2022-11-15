@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Weather } from 'src/app/models/weather.model';
 import { LoadingService } from 'src/app/services/loading.service';
+import { StorageService } from 'src/app/services/storage.service';
 import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
@@ -8,22 +9,21 @@ import { WeatherService } from 'src/app/services/weather.service';
   templateUrl: './search-city.component.html',
   styleUrls: ['./search-city.component.css']
 })
-export class SearchCityComponent implements OnInit {
+export class SearchCityComponent {
+  @Output() weather = new EventEmitter<Weather>();
 
-  constructor(private weatherService: WeatherService, public loader: LoadingService) { }
+  constructor(private weatherService: WeatherService, private storageService: StorageService, private loader: LoadingService) { }
 
   city: string = '';
-
-  ngOnInit(): void {
-  }
 
   getWeather() {
     this.loader.show();
     this.weatherService.getWeatherForCity(this.city)
       .subscribe((result: Weather) => {
-        console.log(result);
-        this.city = '';
+        this.storageService.add(this.city);
+        this.weather.emit(result);
         this.loader.hide();
+        this.city = '';
       });
   }
 

@@ -4,7 +4,7 @@
 
 <div class="grid">
     <div class="search-city col-6 col-offset-3">
-        <app-search-city></app-search-city>
+        <app-search-city (weather)="loadWeather($event)"></app-search-city>
     </div>
     <div class="col-4 col-offset-4">
         <app-cities-cache></app-cities-cache>
