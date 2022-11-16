@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Search } from 'src/app/models/search.model';
 import { StorageService } from 'src/app/services/storage.service';
 
@@ -8,6 +8,7 @@ import { StorageService } from 'src/app/services/storage.service';
   styleUrls: ['./cities-cache.component.css']
 })
 export class CitiesCacheComponent implements OnInit {
+  @Output() city = new EventEmitter<string>();
 
   constructor(private storageService: StorageService) { }
 
@@ -21,4 +22,7 @@ export class CitiesCacheComponent implements OnInit {
     this.cities = this.storageService.get();
   }
 
+  chooseCity(event: Search) : void {
+    this.city.emit(event.city);
+  }
 }

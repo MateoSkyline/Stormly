@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChange } from '@angular/core';
 import { Weather } from 'src/app/models/weather.model';
 import { LoadingService } from 'src/app/services/loading.service';
 import { StorageService } from 'src/app/services/storage.service';
@@ -10,11 +10,19 @@ import { WeatherService } from 'src/app/services/weather.service';
   styleUrls: ['./search-city.component.css']
 })
 export class SearchCityComponent {
+  @Input() cityButton!: string;
   @Output() weather = new EventEmitter<Weather>();
 
   constructor(private weatherService: WeatherService, private storageService: StorageService, private loader: LoadingService) { }
 
   city: string = '';
+
+  ngOnChanges(changes: SimpleChange) : void {
+    if(this.cityButton != undefined){
+      this.city = this.cityButton;
+      this.getWeather();
+    }
+  }
 
   getWeather() {
     this.loader.show();

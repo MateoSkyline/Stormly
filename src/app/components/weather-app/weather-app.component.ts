@@ -11,9 +11,14 @@ export class WeatherAppComponent {
   constructor() { }
 
   weather!: Weather;
+  city!: string;
 
   loadWeather(weather: Weather) : void {
     this.weather = weather;
+  }
+
+  loadCity(city: string) : void {
+    this.city = city;
   }
 
 }
