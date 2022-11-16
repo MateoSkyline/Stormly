@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, SimpleChange } from '@angular/core';
+import { Weather } from 'src/app/models/weather.model';
 
 @Component({
   selector: 'app-weather-outlet',
   templateUrl: './weather-outlet.component.html',
   styleUrls: ['./weather-outlet.component.css']
 })
-export class WeatherOutletComponent implements OnInit {
+export class WeatherOutletComponent {
+  @Input() weatherString: string = '';
 
   constructor() { }
 
-  ngOnInit(): void {
+  weather!: Weather;
+
+  ngOnChanges(changes: SimpleChange) : void {
+    if(this.weatherString != undefined)
+      this.weather = JSON.parse(this.weatherString);
+    console.log(this.weather);
   }
 
 }

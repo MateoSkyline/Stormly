@@ -10,7 +10,7 @@
         <app-cities-cache (city)="loadCity($event)"></app-cities-cache>
     </div>
     <div class="col-6 col-offset-3">
-        <app-weather-outlet></app-weather-outlet>
+        <app-weather-outlet [weatherString]="weather"></app-weather-outlet>
     </div>
 </div>
 

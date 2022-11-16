@@ -1,1 +1,8 @@
-<p>weather-outlet works!</p>
+<div class="flex flex-wrap" *ngIf="weather">
+    <div class="temperature flex align-items-center justify-content-center text-white m-2">
+        {{ weather.current_condition[0].temp_C }}°C
+    </div>
+    <div class="description flex align-items-center justify-content-center text-white m-2">
+        {{ weather.current_condition[0].lang_pl[0].value }}
+    </div>
+</div>

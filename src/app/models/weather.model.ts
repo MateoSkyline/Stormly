@@ -7,6 +7,7 @@ export interface CurrentCondition {
     FeelsLikeF: string;
     cloudcover: string;
     humidity: string;
+    lang_pl: LangPl[];
     localObsDateTime: string;
     observation_time: string;
     precipInches: string;
@@ -23,4 +24,8 @@ export interface CurrentCondition {
     winddirDegree: string;
     windspeedKmph: string;
     windspeedMiles: string;
+}
+
+export interface LangPl {
+    value: string;
 }

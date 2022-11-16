@@ -10,11 +10,11 @@ export class WeatherAppComponent {
 
   constructor() { }
 
-  weather!: Weather;
+  weather!: string;
   city!: string;
 
   loadWeather(weather: Weather) : void {
-    this.weather = weather;
+    this.weather = JSON.stringify(weather);
   }
 
   loadCity(city: string) : void {
