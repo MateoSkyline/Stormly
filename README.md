@@ -1,27 +1,52 @@
-# Stormly
+<h1 align="center"><img src="/../screenshots/stormly-logo.png?raw=true" style="width: 200px;"></h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+<div align="center">
+<img src="https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white">
+</div>
 
-## Development server
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+<!-- TABLE OF CONTENTS -->
+<h2 id="table-of-contents"> :book: Table of Contents</h2>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* [About the Project](#about-the-project) 
+  * [Description](#about-project)
+  * [Mobile](#mobile)
+* [Installation Guide](#installation)
+* [Built with](#build-with)
 
-## Build
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<h2 id="about-the-project"> :pencil: About The Project</h2>
 
-## Running unit tests
+<h3 id="about-project">Description</h3>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+A simple application that takes weather data from the [wttr.in](https://github.com/chubin/wttr.in) API and displays basic information for the specified city such as temperature, humidity, wind speed etc. Additionally there is cache holding 3 last searched cities in Angular's localStorage.
 
-## Running end-to-end tests
+![Stormly Weather Application](/../screenshots/stormly-weather.JPG?raw=true "Basic application view")
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<img src="/../screenshots/stormly-weather-mobile.jpg?raw=true" align="right" style="width: 300px;">
 
-## Further help
+<h3 id="mobile">Mobile</h3>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+A responsive design has been implemented in the application to make the app usable on mobile devices as well.
+
+<h2 id="installation">Installation Guide</h2>
+
+To run this project, first thing that you have to do is run
+```bash
+npm install
+```
+Then, when everything will install, run the project using...
+```bash
+ng serve
+```
+...and open your browser on [http://localhost:4200](http://localhost:4200)
+
+<h2 id="built-with">Build with</h2>
+
+* Angular 14.2.5
+* PrimeNG 14.2.1
+* PrimeFlex 6.0.1
+* UUID 9.0.0
