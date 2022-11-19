@@ -3,14 +3,14 @@
 </div>
 
 <div class="grid">
-    <div class="search-city col-6 col-offset-3">
+    <div class="search-city xl:col-6 xl:col-offset-3 col-12">
         <app-search-city (weather)="loadWeather($event)" [cityButton]="city"></app-search-city>
     </div>
     <div class="col-4 col-offset-4">
         <app-cities-cache (city)="loadCity($event)"></app-cities-cache>
     </div>
-    <div class="col-6 col-offset-3">
-        <app-weather-outlet [weatherString]="weather"></app-weather-outlet>
+    <div class="xl:col-10 xl:col-offset-1 col-12">
+        <app-weather-outlet [weatherString]="weather" [city]="city"></app-weather-outlet>
     </div>
 </div>
 

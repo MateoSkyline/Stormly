@@ -8,6 +8,7 @@ import { Weather } from 'src/app/models/weather.model';
 })
 export class WeatherOutletComponent {
   @Input() weatherString: string = '';
+  @Input() city: string = '';
 
   constructor() { }
 

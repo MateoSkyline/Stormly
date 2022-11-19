@@ -1,5 +1,3 @@
-.temperature {
-    height: 130px;
-    font-size: 120px;
-    line-height: 120px;
+.weather-box {
+    margin-top: 20px;
 }

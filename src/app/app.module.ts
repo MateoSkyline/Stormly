@@ -10,6 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { CardModule } from 'primeng/card';
 
 // Components
 import { AppRoutingModule } from './app-routing.module';
@@ -39,7 +40,8 @@ import { MessageService } from 'primeng/api';
     ButtonModule,
     ProgressSpinnerModule,
     MessagesModule,
-    MessageModule    
+    MessageModule,
+    CardModule
   ],
   providers: [
     MessageService
