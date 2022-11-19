@@ -1,0 +1,7 @@
+.new-city input {
+    width: 100%;
+}
+
+.p-float-label > label {
+    left: 1.75rem;
+}

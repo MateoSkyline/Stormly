@@ -1,0 +1,5 @@
+<div class="cities flex flex-wrap justify-content-center">
+    <ng-container *ngFor="let city of cities">
+        <button pButton pRipple type="button" class="p-button-rounded p-button-outlined city" (click)="chooseCity(city)">{{city.city}}</button>
+    </ng-container>
+</div>

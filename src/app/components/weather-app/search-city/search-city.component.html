@@ -1,0 +1,10 @@
+<div class="grid">
+    <span class="new-city xl:col-11 col-10 p-float-label">
+        <input id="city" type="text" aria-describedby="city-help" pInputText [(ngModel)]="city"/>
+        <label for="city" class="block">Enter your city...</label>
+    </span>
+    <div class="xl:col-1 col-2">
+        <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-outlined"
+        [disabled]="city == ''" (click)="getWeather()"></button>
+    </div>
+</div>

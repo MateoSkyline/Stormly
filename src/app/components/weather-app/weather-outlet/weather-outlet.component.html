@@ -1,0 +1,65 @@
+<div class="weather-box surface-ground px-4 py-5 md:px-6 lg:px-8" *ngIf="weather">
+    <p class="text-lg font-medium ">Today's weather in {{city}}</p>
+    <div class="grid">
+        <div class="col-12 md:col-6 lg:col-3">
+            <div class="surface-card shadow-2 p-3 border-round">
+                <div class="flex justify-content-between mb-3">
+                    <div>
+                        <span class="block text-500 font-medium mb-3">Temperature</span>
+                        <div class="text-900 font-medium text-xl">{{ weather.current_condition[0].temp_C }}°C</div>
+                    </div>
+                    <div class="flex align-items-center justify-content-center bg-blue-100 border-round" style="width:2.5rem;height:2.5rem">
+                        <i class="pi pi-sun text-blue-500 text-xl"></i>
+                    </div>
+                </div>
+                <span class="text-500">Feels like </span>
+                <span class="text-green-500 font-medium">{{ weather.current_condition[0].FeelsLikeC }}°C</span>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-3">
+            <div class="surface-card shadow-2 p-3 border-round">
+                <div class="flex justify-content-between mb-3">
+                    <div>
+                        <span class="block text-500 font-medium mb-3">Humidity</span>
+                        <div class="text-900 font-medium text-xl">{{ weather.current_condition[0].humidity }}%</div>
+                    </div>
+                    <div class="flex align-items-center justify-content-center bg-orange-100 border-round" style="width:2.5rem;height:2.5rem">
+                        <i class="pi pi-percentage text-orange-500 text-xl"></i>
+                    </div>
+                </div>
+                <span class="text-500">Cloud cover </span>
+                <span class="text-green-500 font-medium">{{ weather.current_condition[0].cloudcover }}%</span>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-3">
+            <div class="surface-card shadow-2 p-3 border-round">
+                <div class="flex justify-content-between mb-3">
+                    <div>
+                        <span class="block text-500 font-medium mb-3">Pressure</span>
+                        <div class="text-900 font-medium text-xl">{{ weather.current_condition[0].pressure }} hPa</div>
+                    </div>
+                    <div class="flex align-items-center justify-content-center bg-cyan-100 border-round" style="width:2.5rem;height:2.5rem">
+                        <i class="pi pi-bars text-cyan-500 text-xl"></i>
+                    </div>
+                </div>
+                <span class="text-500">UV Index </span>
+                <span class="text-green-500 font-medium">{{ weather.current_condition[0].uvIndex }}</span>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-3">
+            <div class="surface-card shadow-2 p-3 border-round">
+                <div class="flex justify-content-between mb-3">
+                    <div>
+                        <span class="block text-500 font-medium mb-3">Wind speed</span>
+                        <div class="text-900 font-medium text-xl">{{ weather.current_condition[0].windspeedKmph }} km/h</div>
+                    </div>
+                    <div class="flex align-items-center justify-content-center bg-purple-100 border-round" style="width:2.5rem;height:2.5rem">
+                        <i class="pi pi-send text-purple-500 text-xl"></i>
+                    </div>
+                </div>
+                <span class="text-500">Direction </span>
+                <span class="text-green-500 font-medium">{{ weather.current_condition[0].winddirDegree }}°</span>
+            </div>
+        </div>
+    </div>
+</div>
